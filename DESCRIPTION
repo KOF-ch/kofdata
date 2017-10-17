@@ -1,18 +1,16 @@
-Package: datenservice
+Package: kofdata
 Type: Package
 Version: 0.1
 Title: Get Data From the KOF Datenservice API
-Description: Read Swiss time series data from the KOF Datenservice API.
-The API provides macroeconomic survey data, business cycle and further macro economic time series about Switzerland. The package itself is a set of wrapper around API calls that can read public data and data that needs an API token alike. 
+Description: Read Swiss time series data from the KOF Datenservice API. The API provides macroeconomic survey data, business cycle and further macro economic time series about Switzerland. The package itself is a set of wrapper around API calls that can read public data and data that needs an API token alike. 
 Author: "Matthias Bannert <bannert@kof.ethz.ch> [aut, cre]"
 Depends:
     R (>= 3.0.0),
     jsonlite (>= 1.1),
-    curl
+    httr
 Imports:
     xts,
-    zoo,
-    openxlsx
+    zoo
 Date: 2017-10-16
 License: GPL-2
 LazyData: true
