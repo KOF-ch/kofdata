@@ -2,16 +2,16 @@
 #'
 #' Download a predefined set of time series.
 #' @param set_name The name of the set you wish to download. For a list of available sets, go to [TODO]
-#' @param api_key Your API key. This is only needed if accessing non-public time series.
+#' @param api_key Your API key. This is only needed if accessing non-public time series. Defaults to NULL (public data).
 #' @param show_progress If set to true, shows a progress bar of the data being downloaded.
 #' @import httr
 #' @import jsonlite
 #' @export
-get_dataset <- function(set_name, api_key="", show_progress=F) {
+get_dataset <- function(set_name, api_key = NULL, show_progress = F) {
     # Build request URL
     url <- "https://datenservice.kof.ethz.ch/api/v1/%s/sets/%s"
     
-    if(nchar(api_key) != 0) {
+    if(!is.null(api_key)) {
       url <- paste0(sprintf(url, "main", set_name), "&apikey=", api_key)
     } else {
       url <- sprintf(url, "public", set_name)
@@ -23,7 +23,8 @@ get_dataset <- function(set_name, api_key="", show_progress=F) {
     } else {
       response <- GET(url)
     }
-    data <- fromJSON(content(response, as="text"))
+    
+    data <- fromJSON(content(response, as = "text"))
     
     switch(as.character(response$status_code), 
            "200" = {

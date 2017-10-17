@@ -4,12 +4,12 @@
 \alias{get_dataset}
 \title{get_dataset}
 \usage{
-get_dataset(set_name, api_key = "", show_progress = F)
+get_dataset(set_name, api_key = NULL, show_progress = F)
 }
 \arguments{
 \item{set_name}{The name of the set you wish to download. For a list of available sets, go to [TODO]}
 
-\item{api_key}{Your API key. This is only needed if accessing non-public time series.}
+\item{api_key}{Your API key. This is only needed if accessing non-public time series. Defaults to NULL (public data).}
 
 \item{show_progress}{If set to true, shows a progress bar of the data being downloaded.}
 }

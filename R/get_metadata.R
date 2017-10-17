@@ -2,7 +2,7 @@
 #' 
 #' Download metadata relating to the specified keys.
 #' @param ts_keys A vector of time series keys.
-#' @param locale The language in which to return the metadata (if available)
+#' @param locale character ISO-2-digit language of requested metadata.
 #' @return A named list of lists containing metadata.
 #' @import httr
 #' @import jsonlite

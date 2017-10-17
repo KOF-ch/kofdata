@@ -14,7 +14,7 @@ get_time_series(ts_keys, api_key = "", show_progress = FALSE)
 \item{show_progress}{If set to true, shows a progress bar of the data being downloaded.}
 }
 \description{
-Download time series data from the KOF web API. To explore the available data and find the
-keys to series you are interested in, go to https://datenservice.kof.ethz.ch/static/keyexplorer or run start_key_explorer()
-More awesome words
+Download time series data from the KOF web API. 
+To explore the available data and find the keys to series you are interested
+in, run \code{\link{start_key_explorer()}}.
 }

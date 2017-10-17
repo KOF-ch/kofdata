@@ -9,7 +9,7 @@ get_metadata(ts_keys, locale = c("en", "de", "fr", "it"))
 \arguments{
 \item{ts_keys}{A vector of time series keys.}
 
-\item{locale}{The language in which to return the metadata (if available)}
+\item{locale}{character ISO-2-digit language of requested metadata.}
 }
 \value{
 A named list of lists containing metadata.
