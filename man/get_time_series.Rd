@@ -4,7 +4,7 @@
 \alias{get_time_series}
 \title{get_time_series}
 \usage{
-get_time_series(ts_keys, api_key = "", show_progress = FALSE)
+get_time_series(ts_keys, api_key = NULL, show_progress = TRUE)
 }
 \arguments{
 \item{ts_keys}{A vector of timeseries keys}
