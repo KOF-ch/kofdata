@@ -4,15 +4,14 @@
 \alias{get_cached_data}
 \title{get_dataset}
 \usage{
-get_cached_data(username, api_key, file_to_download = NULL, target = NULL)
+get_cached_data(username, api_key, file_to_download, target = NULL)
 }
 \arguments{
 \item{username}{Your dataservice user name}
 
 \item{api_key}{Your API key}
 
-\item{file_to_download}{The name of the file to retrieve. If this is NULL, a get_cached_data
-returns a vector of available file names instead.}
+\item{file_to_download}{The name of the file to retrieve.}
 
 \item{target}{Path to the location, at which to store the file. If NULL, the file will be
 saved to the working directory.}
@@ -21,7 +20,6 @@ saved to the working directory.}
 Download a predefined set of time series.
 }
 \examples{
-available_files <- get_cached_data(username, apikey)
 httr_response <- get_cached_data(userame, apikey, "some_file.xlsx")
 get_cached_data(username, apikey, "some_file.xlsx", target="C:/data/some_other_name.xlsx")
 }

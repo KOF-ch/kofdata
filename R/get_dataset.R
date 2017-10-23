@@ -36,7 +36,7 @@ get_dataset <- function(set_name, api_key = NULL, show_progress = F) {
            "404" = {
              stop(sprintf("The API responded with\n%s.\nAre you sure the requested set exists and is %s?",
                           data$message,
-                          ifelse(nchar(api_key) == 0, "public", "non-public")))
+                          ifelse(is.null(api_key), "public", "non-public")))
            }
     )
 }
