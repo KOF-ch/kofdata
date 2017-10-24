@@ -10,7 +10,7 @@
 #' @import jsonlite
 #' @export
 get_time_series <- function(ts_keys, api_key = NULL,
-                            show_progress = TRUE) {
+                            show_progress = FALSE) {
   
   # Build request URL
   keys <- paste(ts_keys, collapse=",")

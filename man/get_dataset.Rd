@@ -4,7 +4,7 @@
 \alias{get_dataset}
 \title{get_dataset}
 \usage{
-get_dataset(set_name, api_key = NULL, show_progress = F)
+get_dataset(set_name, api_key = NULL, show_progress = FALSE)
 }
 \arguments{
 \item{set_name}{The name of the set you wish to download. For a list of available sets, go to [TODO]}

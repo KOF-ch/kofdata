@@ -7,7 +7,7 @@
 #' @import httr
 #' @import jsonlite
 #' @export
-get_dataset <- function(set_name, api_key = NULL, show_progress = F) {
+get_dataset <- function(set_name, api_key = NULL, show_progress = FALSE) {
     # Build request URL
     url <- "https://datenservice.kof.ethz.ch/api/v1/%s/sets/%s"
     
