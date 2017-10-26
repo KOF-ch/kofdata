@@ -15,7 +15,11 @@ get_cached_data <- function(username, api_key, file_to_download, target=NULL) {
   
   # Make a listing call to check credentials
   # Otherwise the API response will be written to the target location without error
-  get_cdc_files(username, api_key)
+  files <- get_cdc_files(username, api_key)
+  
+  if(!(file_to_download %in% files)) {
+    stop(sprintf("Could not find file %s!", file_to_download))
+  }
   
   url_template <- "https://datenservice.kof.ethz.ch/api/v1/user/%s/datasets/%s?apikey=%s"
   
