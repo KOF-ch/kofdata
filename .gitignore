@@ -2,4 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
-testuser.R
+R_package/testuser.R
+*.pyc
