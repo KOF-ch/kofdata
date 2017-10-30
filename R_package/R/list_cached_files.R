@@ -4,7 +4,7 @@
 #' @param username Your dataservice user name 
 #' @param api_key Your API key
 #' @examples 
-#' available_files <- get_cached_data(username, apikey)
+#' available_files <- list_cached_files(username, apikey)
 #' @import httr
 #' @export 
 list_cached_files <- function(username, api_key) {

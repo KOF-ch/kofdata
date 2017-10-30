@@ -15,5 +15,5 @@ list_cached_files(username, api_key)
 Download a predefined set of time series.
 }
 \examples{
-available_files <- get_cached_data(username, apikey)
+available_files <- list_cached_files(username, apikey)
 }
