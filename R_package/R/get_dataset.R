@@ -25,18 +25,17 @@ get_dataset <- function(set_name, api_key = NULL, show_progress = FALSE) {
     }
     
     data <- fromJSON(content(response, as = "text"))
+    status <- response$status_code
     
-    switch(as.character(response$status_code), 
-           "200" = {
-             lapply(data, json_to_ts)
-           },
-           "403" = {
-             stop("Could not authenticate. Please check your API key!")
-           },
-           "404" = {
-             stop(sprintf("The API responded with\n%s.\nAre you sure the requested set exists and is %s?",
-                          data$message,
-                          ifelse(is.null(api_key), "public", "non-public")))
-           }
-    )
+    if(status == 200) {
+       lapply(data, json_to_ts)
+    } else if(status == 403) {
+       stop("Could not authenticate. Please check your API key!")
+    } else if(status == 404) {
+       stop(sprintf("The API responded with\n%s.\nAre you sure the requested set exists and is %s?",
+                    data$message,
+                    ifelse(is.null(api_key), "public", "non-public")))
+    } else {
+      stop(sprintf("An error occurred when calling the api:\nStatus: %d\nContent:%s", response$status_code, content(response, as = "text")))
+    }
 }
