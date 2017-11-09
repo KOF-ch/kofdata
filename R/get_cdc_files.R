@@ -1,7 +1,6 @@
-# Helper to get file listing
 #' @import httr
 #' @import jsonlite
-get_cdc_files <- function(username, api_key) {
+.get_cdc_files <- function(username, api_key) {
   url_template <- "https://datenservice.kof.ethz.ch/api/v1/user/%s/datasets?apikey=%s"
   listing_url <- sprintf(url_template, username, api_key)
   listing <- GET(listing_url)

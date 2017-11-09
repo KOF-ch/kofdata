@@ -2,7 +2,7 @@
 % Please edit documentation in R/list_cached_files.R
 \name{list_cached_files}
 \alias{list_cached_files}
-\title{get_dataset}
+\title{Show Available Files for Specific User}
 \usage{
 list_cached_files(username, api_key)
 }
@@ -12,8 +12,9 @@ list_cached_files(username, api_key)
 \item{api_key}{Your API key}
 }
 \description{
-Download a predefined set of time series.
+Show Available Files for Specific User
 }
 \examples{
-available_files <- list_cached_files(username, apikey)
+# Not run
+# available_files <- list_cached_files(username, apikey)
 }

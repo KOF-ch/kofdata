@@ -7,15 +7,16 @@
 #' @param target Path to the location, at which to store the file. If NULL, the file will be
 #' saved to the working directory.
 #' @examples
-#' httr_response <- download_cached_file(userame, apikey, "some_file.xlsx")
-#' download_cached_file(username, apikey, "some_file.xlsx", target="C:/data/some_other_name.xlsx")
+#' # NOT RUN
+#' # httr_response <- download_cached_file(username, apikey, "some_file.xlsx")
+#' # download_cached_file(username, apikey, "some_file.xlsx", target="C:/data/some_other_name.xlsx")
 #' @import httr
 #' @export 
 download_cached_file <- function(username, api_key, file_to_download, target=NULL) {
   
   # Make a listing call to check credentials
   # Otherwise the API response will be written to the target location without error
-  files <- get_cdc_files(username, api_key)
+  files <- .get_cdc_files(username, api_key)
   
   if(!(file_to_download %in% files)) {
     stop(sprintf("Could not find file %s!", file_to_download))

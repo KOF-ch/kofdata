@@ -28,7 +28,7 @@ get_dataset <- function(set_name, api_key = NULL, show_progress = FALSE) {
     status <- response$status_code
     
     if(status == 200) {
-       lapply(data, json_to_ts)
+       lapply(data, .json_to_ts)
     } else if(status == 403) {
        stop("Could not authenticate. Please check your API key!")
     } else if(status == 404) {

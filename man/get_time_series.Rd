@@ -16,5 +16,5 @@ get_time_series(ts_keys, api_key = NULL, show_progress = FALSE)
 \description{
 Download time series data from the KOF web API. 
 To explore the available data and find the keys to series you are interested
-in, run \code{\link{start_key_explorer()}}.
+in, run \code{\link{start_key_explorer}}.
 }

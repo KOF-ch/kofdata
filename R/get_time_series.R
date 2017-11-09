@@ -2,7 +2,7 @@
 #'
 #' Download time series data from the KOF web API. 
 #' To explore the available data and find the keys to series you are interested
-#' in, run \code{\link{start_key_explorer()}}.
+#' in, run \code{\link{start_key_explorer}}.
 #' @param ts_keys A vector of timeseries keys
 #' @param api_key Your API key. This is only needed if accessing non-public time series.
 #' @param show_progress If set to true, shows a progress bar of the data being downloaded.
@@ -33,7 +33,7 @@ get_time_series <- function(ts_keys, api_key = NULL,
   status <- response$status_code
   
   if(status == 200) {
-     lapply(data, json_to_ts)
+     lapply(data, .json_to_ts)
   } else if(status == 403) {
      stop("Could not authenticate. Please check your API key!")
   } else if(status == 412) {
