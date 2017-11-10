@@ -1,9 +1,11 @@
 Package: kofdata
 Type: Package
 Version: 0.1
-Title: Get Data From the KOF Datenservice API
-Description: Read Swiss time series data from the KOF Datenservice API. The API provides macroeconomic survey data, business cycle and further macro economic time series about Switzerland. The package itself is a set of wrappers around API. The kofdata package is able to consume public information as wells as data that needs an API token. 
-Author: "Matthias Bannert <bannert@kof.ethz.ch> [aut, cre], Severin Thöni <thoenis@kof.ethz.ch>"
+Title: Get Data from the KOF Datenservice API
+Description: Read Swiss time series data from the 'KOF Datenservice' API, <https://datenservice.kof.ethz.ch>. The API provides macroeconomic survey data, business cycle and further macro economic time series about Switzerland. The package itself is a set of wrappers around the 'KOF Datenservice' API. The 'kofdata' package is able to consume public information as well as data that requires an API token. 
+Authors@R: c(
+    person("Matthias", "Bannert", , "bannert@kof.ethz.ch", c("aut", "cre")),
+    person("Severin", "Thoeni", , "thoenis@kof.ethz.ch", "aut"))
 Depends:
     R (>= 3.0.0),
     jsonlite (>= 1.1),
@@ -11,10 +13,11 @@ Depends:
 Imports:
     xts,
     zoo
+URL: https://github.com/KOF-ch/kofdata
+BugReports: https://github.com/KOF-ch/kofdata/issues
 Date: 2017-10-16
 License: GPL-2
 LazyData: true
-Maintainer: 'Matthias Bannert' <bannert@kof.ethz.ch>
 RoxygenNote: 6.0.1
 Suggests: testthat
 Encoding: UTF-8

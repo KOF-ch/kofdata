@@ -2,18 +2,23 @@
 % Please edit documentation in R/get_metadata.R
 \name{get_metadata}
 \alias{get_metadata}
-\title{get_metadata}
+\title{Get Localized Meta Information}
 \usage{
 get_metadata(ts_keys, locale = c("en", "de", "fr", "it"))
 }
 \arguments{
 \item{ts_keys}{A vector of time series keys.}
 
-\item{locale}{character ISO-2-digit language of requested metadata.}
+\item{locale}{character ISO-2-digit language of requested metadata. Meta data
+are for survey related typically available in English, German, French and Italian. 
+Non survey data are not provided with meta information, yet.}
 }
 \value{
 A named list of lists containing metadata.
 }
 \description{
-Download metadata relating to the specified keys.
+Download metadata given a time series key.
+}
+\examples{
+get_metadata("ch.kof.inu.run1.ng08.fx.q_ql_ass_bs.balance","en")
 }

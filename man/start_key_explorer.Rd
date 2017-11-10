@@ -2,7 +2,7 @@
 % Please edit documentation in R/start_key_explorer.R
 \name{start_key_explorer}
 \alias{start_key_explorer}
-\title{start_key_explorer}
+\title{Start the KOF Key Explorer}
 \usage{
 start_key_explorer()
 }
@@ -10,4 +10,7 @@ start_key_explorer()
 Opens the key explorer page in your browser.
 The key explorer is a web application designed to help you quickly find the identifying keys
 for the time series you are interested in.
+}
+\examples{
+start_key_explorer()
 }

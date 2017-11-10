@@ -1,9 +1,11 @@
-#' get_dataset
+#' Download Pre-Defined Dataset
 #'
 #' Download a predefined set of time series.
 #' @param set_name The name of the set you wish to download. For a list of available sets, go to [TODO]
 #' @param api_key Your API key. This is only needed if accessing non-public time series. Defaults to NULL (public data).
 #' @param show_progress If set to true, shows a progress bar of the data being downloaded.
+#' @examples 
+#' get_dataset("ds_kmi_mixed_freq",show_progress = T)
 #' @import httr
 #' @import jsonlite
 #' @export

@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_dataset.R
 \name{get_dataset}
 \alias{get_dataset}
-\title{get_dataset}
+\title{Download Pre-Defined Dataset}
 \usage{
 get_dataset(set_name, api_key = NULL, show_progress = FALSE)
 }
@@ -15,4 +15,7 @@ get_dataset(set_name, api_key = NULL, show_progress = FALSE)
 }
 \description{
 Download a predefined set of time series.
+}
+\examples{
+get_dataset("ds_kmi_mixed_freq",show_progress = T)
 }

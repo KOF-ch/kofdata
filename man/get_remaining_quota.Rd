@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_quota.R
 \name{get_remaining_quota}
 \alias{get_remaining_quota}
-\title{get_remaining_quota}
+\title{Check Remaining Quota}
 \usage{
 get_remaining_quota(api_key)
 }
@@ -11,4 +11,7 @@ get_remaining_quota(api_key)
 }
 \description{
 Query the API for the number of time series downloads remaining in the current month.
+}
+\examples{
+get_remaining_quota("313984fcd9f343d3961891319b0ed321")
 }

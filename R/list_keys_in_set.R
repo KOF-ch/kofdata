@@ -1,4 +1,4 @@
-#' list_keys_in_set
+#' List All Keys in a Set
 #'
 #' List the keys of all time series in a set. To learn more about specific keys, use get_metadata.
 #' @param setname The name of the set
@@ -6,6 +6,8 @@
 #' If multiple set names are provided, a list of vectors of time series keys.
 #' @import httr
 #' @import jsonlite
+#' @examples 
+#' list_keys_in_set("ds_kmi_mixed_freq")
 #' @export
 list_keys_in_set <- function(setname) {
   url <- "https://datenservice.kof.ethz.ch/api/v1/sets/details/%s"

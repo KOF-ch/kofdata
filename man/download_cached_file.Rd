@@ -20,7 +20,5 @@ saved to the working directory.}
 Download a predefined set of time series.
 }
 \examples{
-# NOT RUN
-# httr_response <- download_cached_file(username, apikey, "some_file.xlsx")
-# download_cached_file(username, apikey, "some_file.xlsx", target="C:/data/some_other_name.xlsx")
+ download_cached_file("kofdatapkg", "313984fcd9f343d3961891319b0ed321","empty.txt")
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_time_series.R
 \name{get_time_series}
 \alias{get_time_series}
-\title{get_time_series}
+\title{Get Time Series form KOF Datenservice API}
 \usage{
 get_time_series(ts_keys, api_key = NULL, show_progress = FALSE)
 }
@@ -17,4 +17,7 @@ get_time_series(ts_keys, api_key = NULL, show_progress = FALSE)
 Download time series data from the KOF web API. 
 To explore the available data and find the keys to series you are interested
 in, run \code{\link{start_key_explorer}}.
+}
+\examples{
+get_time_series("kofbarometer")
 }

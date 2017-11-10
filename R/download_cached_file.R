@@ -7,9 +7,7 @@
 #' @param target Path to the location, at which to store the file. If NULL, the file will be
 #' saved to the working directory.
 #' @examples
-#' # NOT RUN
-#' # httr_response <- download_cached_file(username, apikey, "some_file.xlsx")
-#' # download_cached_file(username, apikey, "some_file.xlsx", target="C:/data/some_other_name.xlsx")
+#'  download_cached_file("kofdatapkg", "313984fcd9f343d3961891319b0ed321","empty.txt")
 #' @import httr
 #' @export 
 download_cached_file <- function(username, api_key, file_to_download, target=NULL) {
@@ -18,7 +16,7 @@ download_cached_file <- function(username, api_key, file_to_download, target=NUL
   # Otherwise the API response will be written to the target location without error
   files <- .get_cdc_files(username, api_key)
   
-  if(!(file_to_download %in% files)) {
+  if(!(file_to_download %in% files$files$name)) {
     stop(sprintf("Could not find file %s!", file_to_download))
   }
   

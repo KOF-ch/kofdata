@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_legacy_key.R
 \name{get_legacy_key}
 \alias{get_legacy_key}
-\title{get_legacy_key}
+\title{Get a Former Time Series Identifier from KOF Database}
 \usage{
 get_legacy_key(ts_keys)
 }
@@ -13,5 +13,9 @@ get_legacy_key(ts_keys)
 A named list of legacy keys
 }
 \description{
-Get legacy keys for the provided new ts_keys
+Get legacy keys given new time series keys. Note that not all records need to have 
+a legacy key because there are more new keys than old keys.
+}
+\examples{
+get_legacy_key("ch.kof.inu.run1.ng08.fx.q_ql_ass_bs.balance")
 }

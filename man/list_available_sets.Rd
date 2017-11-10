@@ -2,7 +2,7 @@
 % Please edit documentation in R/list_available_sets.R
 \name{list_available_sets}
 \alias{list_available_sets}
-\title{list_available_sets}
+\title{List Available Set Names and Their Description}
 \usage{
 list_available_sets()
 }
@@ -10,5 +10,8 @@ list_available_sets()
 A data frame with the names, descriptions and public availability of datasets. These sets can be downloaded via get_dataset.
 }
 \description{
-Get a list of all available data sets.
+Sets are pre-defined lists of time series. Sets are the convenient alternative to concatenating many series in an URL.
+}
+\examples{
+list_available_sets()
 }

@@ -1,4 +1,4 @@
-#' get_time_series
+#' Get Time Series form KOF Datenservice API
 #'
 #' Download time series data from the KOF web API. 
 #' To explore the available data and find the keys to series you are interested
@@ -8,6 +8,8 @@
 #' @param show_progress If set to true, shows a progress bar of the data being downloaded.
 #' @import httr
 #' @import jsonlite
+#' @examples 
+#' get_time_series("kofbarometer")
 #' @export
 get_time_series <- function(ts_keys, api_key = NULL,
                             show_progress = FALSE) {

@@ -1,7 +1,9 @@
-#' get_remaining_quota 
+#' Check Remaining Quota
 #' 
 #' Query the API for the number of time series downloads remaining in the current month. 
 #' @param api_key Your API key
+#' @examples 
+#' get_remaining_quota("313984fcd9f343d3961891319b0ed321")
 #' @import httr
 #' @export 
 get_remaining_quota <- function(api_key) {
