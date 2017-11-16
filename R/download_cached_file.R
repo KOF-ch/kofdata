@@ -7,7 +7,8 @@
 #' @param target Path to the location, at which to store the file. If NULL, the file will be
 #' saved to the working directory.
 #' @examples
-#'  download_cached_file("kofdatapkg", "313984fcd9f343d3961891319b0ed321","empty.txt")
+#' f <-  download_cached_file("kofdatapkg", "313984fcd9f343d3961891319b0ed321",
+#' "empty.txt",file.path(tempdir(),"empty.txt"))
 #' @import httr
 #' @export 
 download_cached_file <- function(username, api_key, file_to_download, target=NULL) {
