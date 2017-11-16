@@ -5,7 +5,7 @@
 #' @param api_key Your API key. This is only needed if accessing non-public time series. Defaults to NULL (public data).
 #' @param show_progress If set to true, shows a progress bar of the data being downloaded.
 #' @examples 
-#' get_dataset("ds_kmi_mixed_freq",show_progress = T)
+#' get_dataset("ds_kmi_mixed_freq",show_progress = TRUE)
 #' @import httr
 #' @import jsonlite
 #' @export
@@ -14,7 +14,7 @@ get_dataset <- function(set_name, api_key = NULL, show_progress = FALSE) {
     url <- "https://datenservice.kof.ethz.ch/api/v1/%s/sets/%s"
     
     if(!is.null(api_key)) {
-      url <- paste0(sprintf(url, "main", set_name), "&apikey=", api_key)
+      url <- paste0(sprintf(url, "main", set_name), "?apikey=", api_key)
     } else {
       url <- sprintf(url, "public", set_name)
     }

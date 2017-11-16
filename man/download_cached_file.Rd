@@ -20,5 +20,6 @@ saved to the working directory.}
 Download a predefined set of time series.
 }
 \examples{
- download_cached_file("kofdatapkg", "313984fcd9f343d3961891319b0ed321","empty.txt")
+f <-  download_cached_file("kofdatapkg", "313984fcd9f343d3961891319b0ed321",
+"empty.txt",file.path(tempdir(),"empty.txt"))
 }

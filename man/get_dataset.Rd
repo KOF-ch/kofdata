@@ -17,5 +17,5 @@ get_dataset(set_name, api_key = NULL, show_progress = FALSE)
 Download a predefined set of time series.
 }
 \examples{
-get_dataset("ds_kmi_mixed_freq",show_progress = T)
+get_dataset("ds_kmi_mixed_freq",show_progress = TRUE)
 }
