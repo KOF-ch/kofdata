@@ -20,7 +20,7 @@ get_time_series <- function(ts_keys, api_key = NULL,
   url <- "https://datenservice.kof.ethz.ch/api/v1/%s/ts?keys=%s"
   
   if(!is.null(api_key)) {
-    url <- paste0(sprintf(url, "main", keys), "&apikey=", api_key)
+    url <- paste0(sprintf(url, "main", keys), "?apikey=", api_key)
   } else {
     url <- sprintf(url, "public", keys)
   }
