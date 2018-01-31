@@ -2,7 +2,7 @@
 % Please edit documentation in R/list_public_keys.R
 \name{list_public_keys}
 \alias{list_public_keys}
-\title{List Keys for Available Public Time Series}
+\title{List Keys for All Publicly Available Time Series}
 \usage{
 list_public_keys()
 }
@@ -10,7 +10,7 @@ list_public_keys()
 An array of all public time series keys.
 }
 \description{
-List Keys for Available Public Time Series
+List Keys for All Publicly Available Time Series
 }
 \examples{
 list_public_keys()
