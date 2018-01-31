@@ -21,13 +21,15 @@ download_cached_file <- function(username, api_key, file_to_download, target=NUL
     stop(sprintf("Could not find file %s!", file_to_download))
   }
   
-  url_template <- "https://datenservice.kof.ethz.ch/api/v1/user/%s/datasets/%s?apikey=%s"
+  url_template <- "https://datenservice.kof.ethz.ch/api/v1/user/%s/datasets/%s"
   
-  download_url <- sprintf(url_template, username, file_to_download, api_key)
+  query <- list(apikey = api_key)
+  
+  download_url <- sprintf(url_template, username, file_to_download)
   
   if(is.null(target)) {
     target <- file_to_download
   }
   
-  GET(download_url, write_disk(target, overwrite=TRUE))
+  GET(download_url, write_disk(target, overwrite=TRUE), query = query)
 }

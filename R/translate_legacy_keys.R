@@ -11,12 +11,10 @@
 #' @export
 translate_legacy_keys <- function(legacy_keys) {
   
+  url <- "https://datenservice.kof.ethz.ch/api/v1/metadata/translatelegacykeys"
+  
   legacy_keys <- paste(legacy_keys, collapse=",")
   
-  url_template <- "https://datenservice.kof.ethz.ch/api/v1/metadata/translatelegacykeys?keys=%s"
-  
-  url <- sprintf(url_template, legacy_keys)
-  
-  response <- GET(url)
+  response <- GET(url, query = list(keys = legacy_keys))
   fromJSON(content(response, as="text"))
 }

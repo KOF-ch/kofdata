@@ -12,14 +12,15 @@ translate_legacy_key <- function(legacy_keys,
   
   keys <- paste(legacy_keys, collapse=",")
   
-  url_template <- "https://datenservice.kof.ethz.ch/api/v1/metadata/translatelegacykeys?keys=%s"
-  url <- sprintf(url_template,keys)
+  query <- list(keys = keys)
+  
+  url <- "https://datenservice.kof.ethz.ch/api/v1/metadata/translatelegacykeys"
   
   # Call the API
   if(show_progress) {
-    response <- GET(url, progress())
+    response <- GET(url, progress(), query = query)
   } else {
-    response <- GET(url)
+    response <- GET(url, query = query)
   }
   
   data <- fromJSON(content(response, as="text"))

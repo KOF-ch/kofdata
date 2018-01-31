@@ -7,7 +7,10 @@
 #' @import httr
 #' @export 
 get_remaining_quota <- function(api_key) {
-  response <- GET(paste0("https://datenservice.kof.ethz.ch/api/v1/main/remainingquota?apikey=", api_key))
+  
+  query = list(apikey = api_key)
+  
+  response <- GET("https://datenservice.kof.ethz.ch/api/v1/main/remainingquota", query = query)
   
   if(response$status_code == 200) {
     fromJSON(content(response, as="text"))$quota

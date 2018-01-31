@@ -17,19 +17,22 @@ get_time_series <- function(ts_keys, api_key = NULL,
   # Build request URL
   keys <- paste(ts_keys, collapse=",")
   
-  url <- "https://datenservice.kof.ethz.ch/api/v1/%s/ts?keys=%s"
+  url <- "https://datenservice.kof.ethz.ch/api/v1/%s/ts"
+  
+  query <- list(keys = keys)
   
   if(!is.null(api_key)) {
-    url <- paste0(sprintf(url, "main", keys), "&apikey=", api_key)
+    url <- sprintf(url, "main")
+    query$apikey <- api_key
   } else {
-    url <- sprintf(url, "public", keys)
+    url <- sprintf(url, "public")
   }
   
   # Call the API
   if(show_progress) {
-    response <- GET(url, progress())
+    response <- GET(url, progress(), query = query)
   } else {
-    response <- GET(url)
+    response <- GET(url, query = query)
   }
   data <- fromJSON(content(response, as="text"))
   status <- response$status_code

@@ -13,17 +13,20 @@ get_dataset <- function(set_name, api_key = NULL, show_progress = FALSE) {
     # Build request URL
     url <- "https://datenservice.kof.ethz.ch/api/v1/%s/sets/%s"
     
+    query = list()
+    
     if(!is.null(api_key)) {
-      url <- paste0(sprintf(url, "main", set_name), "?apikey=", api_key)
+      url <- sprintf(url, "main", set_name)
+      query$apikey = api_key
     } else {
       url <- sprintf(url, "public", set_name)
     }
     
     # Call the API
     if(show_progress) {
-      response <- GET(url, progress())
+      response <- GET(url, progress(), query = query)
     } else {
-      response <- GET(url)
+      response <- GET(url, query = query)
     }
     
     data <- fromJSON(content(response, as = "text"))

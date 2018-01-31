@@ -15,12 +15,15 @@ get_metadata <- function(ts_keys, locale=c("en", "de", "fr", "it")) {
   
   locale <- match.arg(locale)
   
-  url_template <- "https://datenservice.kof.ethz.ch/api/v1/metadata?key=%s&locale=%s"
+  url <- "https://datenservice.kof.ethz.ch/api/v1/metadata"
+  
+  query = list(locale = locale)
   
   meta_data <- lapply(ts_keys, function(key) {
-    url <- sprintf(url_template, key, locale)
     
-    response <- GET(url)
+    query$key = key
+    
+    response <- GET(url, query = query)
     data <- fromJSON(content(response, as="text"))
     data[data == "NA"] <- NA
     
