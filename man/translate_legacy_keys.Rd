@@ -4,10 +4,12 @@
 \alias{translate_legacy_keys}
 \title{translate_legacy_keys}
 \usage{
-translate_legacy_keys(legacy_keys)
+translate_legacy_keys(legacy_keys, chunksize = 100)
 }
 \arguments{
 \item{legacy_keys}{A vector of legacy keys for which to find new keys}
+
+\item{chunksize}{integer to set chunksize in order to avoid URLs that are too long.}
 }
 \value{
 A list of vectors of new ts_keys
