@@ -31,5 +31,11 @@ download_cached_file <- function(username, api_key, file_to_download, target=NUL
     target <- file_to_download
   }
   
+  if(show_progress) {
+    set_config(progress())
+  }
+  set_config(write_disk(target, overwrite = TRUE))
+  on.exit(reset_config())
+  
   GET(download_url, write_disk(target, overwrite=TRUE), query = query)
 }
