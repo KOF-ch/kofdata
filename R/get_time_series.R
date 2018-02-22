@@ -12,7 +12,8 @@
 #' get_time_series("kofbarometer")
 #' @export
 get_time_series <- function(ts_keys, api_key = NULL,
-                            show_progress = FALSE) {
+                            show_progress = FALSE,
+                            use_tempfile = FALSE) {
   
   # Build request URL
   keys <- paste(ts_keys, collapse=",")
@@ -28,12 +29,17 @@ get_time_series <- function(ts_keys, api_key = NULL,
     url <- sprintf(url, "public")
   }
   
-  # Call the API
+  # set httr config
   if(show_progress) {
-    response <- GET(url, progress(), query = query)
-  } else {
-    response <- GET(url, query = query)
+    set_config(progress())
   }
+  if(use_tempfile) {
+    set_config(write_disk(tempfile()))
+  }
+  on.exit(reset_config())
+  
+  # Call the API
+  response <- GET(url, query = query)
   data <- fromJSON(content(response, as="text"))
   status <- response$status_code
   
