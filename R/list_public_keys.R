@@ -6,11 +6,11 @@
 #' @examples 
 #' list_public_keys()
 #' @export
-list_public_keys <- function() {
+list_public_keys <- function(use_tempfile = FALSE) {
   # Build request URL
   url <- "https://datenservice.kof.ethz.ch/api/v1/public/listkeys"
   
-  response <- GET(url)
+  response <- kofdata_get(url, use_tempfile = use_tempfile)
   
   if(response$status_code == 200) {
     fromJSON(content(response, as = "text"))

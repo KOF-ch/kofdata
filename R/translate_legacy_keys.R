@@ -10,7 +10,7 @@
 #' @import httr
 #' @import jsonlite
 #' @export
-translate_legacy_keys <- function(legacy_keys, chunksize = 100){
+translate_legacy_keys <- function(legacy_keys, chunksize = 100, use_tempfile = FALSE){
   
   url <- "https://datenservice.kof.ethz.ch/api/v1/metadata/translatelegacykeys"
   
@@ -19,7 +19,7 @@ translate_legacy_keys <- function(legacy_keys, chunksize = 100){
   
   result <- lapply(chunk_list,function(x){
     l_keys <- paste(x, collapse=",")
-    response <- GET(url, query = list(keys = l_keys))
+    response <- kofdata_get(url, use_tempfile = use_tempfile, query = list(keys = l_keys))
     if(response$status_code != 200){
       stop(sprintf("web request not successful, http error %s returned",
                    as.character(response$status_code)))

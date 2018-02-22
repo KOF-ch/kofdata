@@ -11,7 +11,7 @@
 #' @examples 
 #' get_metadata("ch.kof.inu.run1.ng08.fx.q_ql_ass_bs.balance","en")
 #' @export
-get_metadata <- function(ts_keys, locale=c("en", "de", "fr", "it")) {
+get_metadata <- function(ts_keys, locale=c("en", "de", "fr", "it"), use_tempfile = FALSE) {
   
   locale <- match.arg(locale)
   
@@ -23,7 +23,7 @@ get_metadata <- function(ts_keys, locale=c("en", "de", "fr", "it")) {
     
     query$key = key
     
-    response <- GET(url, query = query)
+    response <- kofdata_get(url, use_tempfile = use_tempfile, query = query)
     data <- fromJSON(content(response, as="text"))
     data[data == "NA"] <- NA
     

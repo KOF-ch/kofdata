@@ -11,11 +11,11 @@
 #' "empty.txt",file.path(tempdir(),"empty.txt"))
 #' @import httr
 #' @export 
-download_cached_file <- function(username, api_key, file_to_download, target=NULL) {
+download_cached_file <- function(username, api_key, file_to_download, target=NULL, show_progress = FALSE, use_tempfile = FALSE) {
   
   # Make a listing call to check credentials
   # Otherwise the API response will be written to the target location without error
-  files <- .get_cdc_files(username, api_key)
+  files <- .get_cdc_files(username, api_key, show_progress, use_tempfile)
   
   if(!(file_to_download %in% files$files$name)) {
     stop(sprintf("Could not find file %s!", file_to_download))

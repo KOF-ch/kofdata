@@ -9,11 +9,11 @@
 #' @import httr
 #' @import jsonlite
 #' @export
-get_dataset <- function(set_name, api_key = NULL, show_progress = FALSE) {
+get_dataset <- function(set_name, api_key = NULL, show_progress = FALSE, use_tempfile = FALSE) {
     # Build request URL
     url <- "https://datenservice.kof.ethz.ch/api/v1/%s/sets/%s"
     
-    query = list()
+    query <- list()
     
     if(!is.null(api_key)) {
       url <- sprintf(url, "main", set_name)
@@ -23,11 +23,7 @@ get_dataset <- function(set_name, api_key = NULL, show_progress = FALSE) {
     }
     
     # Call the API
-    if(show_progress) {
-      response <- GET(url, progress(), query = query)
-    } else {
-      response <- GET(url, query = query)
-    }
+    response <- kofdata_get(url, show_progress, use_tempfile, query = query)
     
     data <- fromJSON(content(response, as = "text"))
     status <- response$status_code

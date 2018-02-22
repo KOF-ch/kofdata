@@ -7,11 +7,11 @@
 #' @examples 
 #' list_available_sets()
 #' @export
-list_available_sets <- function() {
+list_available_sets <- function(use_tempfile = FALSE) {
   # Build request URL
   url <- "https://datenservice.kof.ethz.ch/api/v1/sets/"
 
-  response <- GET(url)
+  response <- kofdata_get(url, use_tempfile)
   
   if(response$status_code == 200) {
     fromJSON(content(response, as = "text"))

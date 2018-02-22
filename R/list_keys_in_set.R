@@ -9,11 +9,11 @@
 #' @examples 
 #' list_keys_in_set("ds_kmi_mixed_freq")
 #' @export
-list_keys_in_set <- function(setname) {
+list_keys_in_set <- function(setname, use_tempfile = FALSE) {
   url <- "https://datenservice.kof.ethz.ch/api/v1/sets/details/%s"
   
   keylists <- lapply(setname, function(set){
-    response <- GET(sprintf(url, set))
+    response <- kofdata_get(sprintf(url, set), use_tempfile = use_tempfile)
     
     if(response$status_code == 200) {
       fromJSON(content(response, as = "text"))$keys

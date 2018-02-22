@@ -11,6 +11,6 @@
 #' available_files
 #' @import httr
 #' @export 
-list_cached_files <- function(username, api_key) {
-  .get_cdc_files(username, api_key)$files$name
+list_cached_files <- function(username, api_key, use_tempfile = FALSE) {
+  .get_cdc_files(username, api_key, use_tempfile = use_tempfile)$files$name
 }

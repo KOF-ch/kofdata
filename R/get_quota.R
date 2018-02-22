@@ -6,11 +6,11 @@
 #' get_remaining_quota("313984fcd9f343d3961891319b0ed321")
 #' @import httr
 #' @export 
-get_remaining_quota <- function(api_key) {
+get_remaining_quota <- function(api_key, use_tempfile = FALSE) {
   
   query = list(apikey = api_key)
   
-  response <- GET("https://datenservice.kof.ethz.ch/api/v1/main/remainingquota", query = query)
+  response <- kofdata_get("https://datenservice.kof.ethz.ch/api/v1/main/remainingquota", use_tempfile = use_tempfile, query = query)
   
   if(response$status_code == 200) {
     fromJSON(content(response, as="text"))$quota
