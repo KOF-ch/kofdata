@@ -29,17 +29,8 @@ get_time_series <- function(ts_keys, api_key = NULL,
     url <- sprintf(url, "public")
   }
   
-  # set httr config
-  if(show_progress) {
-    set_config(progress())
-  }
-  if(use_tempfile) {
-    set_config(write_disk(tempfile()))
-  }
-  on.exit(reset_config())
-  
   # Call the API
-  response <- GET(url, query = query)
+  response <- kofdata_get(url, show_progress, use_tempfile, query = query)
   data <- fromJSON(content(response, as="text"))
   status <- response$status_code
   

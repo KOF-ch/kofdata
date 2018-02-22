@@ -10,3 +10,11 @@ test_that("get_time_series works", {
   expect_equal(names(baro), "kofbarometer")
   expect_is(baro$kofbarometer, "ts")
 })
+
+test_that("use_tempfile works", {
+  baro <- get_time_series("kofbarometer", use_tempfile = TRUE)
+  
+  expect_is(baro, "list")
+  expect_equal(names(baro), "kofbarometer")
+  expect_is(baro$kofbarometer, "ts")
+})
