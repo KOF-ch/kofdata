@@ -5,6 +5,8 @@
 #' @param locale character ISO-2-digit language of requested metadata. Meta data
 #' are for survey related typically available in English, German, French and Italian. 
 #' Non survey data are not provided with meta information, yet. 
+#' @param use_tempfile Store downloaded data to a temporary file and read from there.
+#' This option can be used to work around security measures preventing reading directly into RStudio's memory.
 #' @return A named list of lists containing metadata.
 #' @import httr
 #' @import jsonlite

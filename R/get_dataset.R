@@ -4,6 +4,8 @@
 #' @param set_name The name of the set you wish to download. For a list of available sets, go to [TODO]
 #' @param api_key Your API key. This is only needed if accessing non-public time series. Defaults to NULL (public data).
 #' @param show_progress If set to true, shows a progress bar of the data being downloaded.
+#' @param use_tempfile Store downloaded data to a temporary file and read from there.
+#' This option can be used to work around security measures preventing reading directly into RStudio's memory.
 #' @examples 
 #' get_dataset("ds_kmi_mixed_freq",show_progress = TRUE)
 #' @import httr

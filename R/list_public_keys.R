@@ -1,5 +1,8 @@
 #' List Keys for All Publicly Available Time Series
 #'
+#' @param use_tempfile Store downloaded data to a temporary file and read from there.
+#' This option can be used to work around security measures preventing reading directly into RStudio's memory.
+#'
 #' @return An array of all public time series keys.
 #' @import httr
 #' @import jsonlite

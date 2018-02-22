@@ -2,6 +2,8 @@
 #' 
 #' Query the API for the number of time series downloads remaining in the current month. 
 #' @param api_key Your API key
+#' @param use_tempfile Store downloaded data to a temporary file and read from there.
+#' This option can be used to work around security measures preventing reading directly into RStudio's memory.
 #' @examples 
 #' get_remaining_quota("313984fcd9f343d3961891319b0ed321")
 #' @import httr

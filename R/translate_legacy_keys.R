@@ -6,6 +6,8 @@
 #' specific new keys that are needed. For the key explorer to find the exact keys, see \code{\link{start_key_explorer}}.
 #' @param legacy_keys A vector of legacy keys for which to find new keys
 #' @param chunksize integer to set chunksize in order to avoid URLs that are too long. 
+#' @param use_tempfile Store downloaded data to a temporary file and read from there.
+#' This option can be used to work around security measures preventing reading directly into RStudio's memory.
 #' @return A list of vectors of new ts_keys
 #' @import httr
 #' @import jsonlite

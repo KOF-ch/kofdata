@@ -4,7 +4,8 @@
 \alias{download_cached_file}
 \title{get_dataset}
 \usage{
-download_cached_file(username, api_key, file_to_download, target = NULL)
+download_cached_file(username, api_key, file_to_download, target = NULL,
+  show_progress = FALSE, use_tempfile = FALSE)
 }
 \arguments{
 \item{username}{Your dataservice user name}
@@ -15,6 +16,11 @@ download_cached_file(username, api_key, file_to_download, target = NULL)
 
 \item{target}{Path to the location, at which to store the file. If NULL, the file will be
 saved to the working directory.}
+
+\item{show_progress}{If set to true, shows a progress bar of the data being downloaded.}
+
+\item{use_tempfile}{Store downloaded data to a temporary file and read from there.
+This option can be used to work around security measures preventing reading directly into RStudio's memory.}
 }
 \description{
 Download a predefined set of time series.

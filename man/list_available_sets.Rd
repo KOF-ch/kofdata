@@ -4,7 +4,11 @@
 \alias{list_available_sets}
 \title{List Available Set Names and Their Description}
 \usage{
-list_available_sets()
+list_available_sets(use_tempfile = FALSE)
+}
+\arguments{
+\item{use_tempfile}{Store downloaded data to a temporary file and read from there.
+This option can be used to work around security measures preventing reading directly into RStudio's memory.}
 }
 \value{
 A data frame with the names, descriptions and public availability of datasets. These sets can be downloaded via get_dataset.

@@ -4,12 +4,15 @@
 \alias{list_cached_files}
 \title{Show Cached Files of Specific User}
 \usage{
-list_cached_files(username, api_key)
+list_cached_files(username, api_key, use_tempfile = FALSE)
 }
 \arguments{
 \item{username}{Your dataservice user name}
 
 \item{api_key}{Your API key}
+
+\item{use_tempfile}{Store downloaded data to a temporary file and read from there.
+This option can be used to work around security measures preventing reading directly into RStudio's memory.}
 }
 \description{
 Some users get individually composed, cached files. If you ordered such 

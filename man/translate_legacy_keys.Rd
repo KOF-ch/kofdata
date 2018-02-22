@@ -4,12 +4,15 @@
 \alias{translate_legacy_keys}
 \title{translate_legacy_keys}
 \usage{
-translate_legacy_keys(legacy_keys, chunksize = 100)
+translate_legacy_keys(legacy_keys, chunksize = 100, use_tempfile = FALSE)
 }
 \arguments{
 \item{legacy_keys}{A vector of legacy keys for which to find new keys}
 
 \item{chunksize}{integer to set chunksize in order to avoid URLs that are too long.}
+
+\item{use_tempfile}{Store downloaded data to a temporary file and read from there.
+This option can be used to work around security measures preventing reading directly into RStudio's memory.}
 }
 \value{
 A list of vectors of new ts_keys

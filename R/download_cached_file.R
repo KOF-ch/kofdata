@@ -6,6 +6,9 @@
 #' @param file_to_download The name of the file to retrieve.
 #' @param target Path to the location, at which to store the file. If NULL, the file will be
 #' saved to the working directory.
+#' @param show_progress If set to true, shows a progress bar of the data being downloaded.
+#' @param use_tempfile Store downloaded data to a temporary file and read from there.
+#' This option can be used to work around security measures preventing reading directly into RStudio's memory.
 #' @examples
 #' f <-  download_cached_file("kofdatapkg", "313984fcd9f343d3961891319b0ed321",
 #' "empty.txt",file.path(tempdir(),"empty.txt"))

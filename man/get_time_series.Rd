@@ -4,7 +4,8 @@
 \alias{get_time_series}
 \title{Get Time Series form KOF Datenservice API}
 \usage{
-get_time_series(ts_keys, api_key = NULL, show_progress = FALSE)
+get_time_series(ts_keys, api_key = NULL, show_progress = FALSE,
+  use_tempfile = FALSE)
 }
 \arguments{
 \item{ts_keys}{A vector of timeseries keys}
@@ -12,6 +13,9 @@ get_time_series(ts_keys, api_key = NULL, show_progress = FALSE)
 \item{api_key}{Your API key. This is only needed if accessing non-public time series.}
 
 \item{show_progress}{If set to true, shows a progress bar of the data being downloaded.}
+
+\item{use_tempfile}{Store downloaded data to a temporary file and read from there.
+This option can be used to work around security measures preventing reading directly into RStudio's memory.}
 }
 \description{
 Download time series data from the KOF web API. 

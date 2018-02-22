@@ -4,10 +4,13 @@
 \alias{list_keys_in_set}
 \title{List All Keys in a Set}
 \usage{
-list_keys_in_set(setname)
+list_keys_in_set(setname, use_tempfile = FALSE)
 }
 \arguments{
 \item{setname}{The name of the set}
+
+\item{use_tempfile}{Store downloaded data to a temporary file and read from there.
+This option can be used to work around security measures preventing reading directly into RStudio's memory.}
 }
 \value{
 If a single set name is provided, a vector of time series keys.

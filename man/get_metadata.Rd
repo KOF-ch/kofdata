@@ -4,7 +4,8 @@
 \alias{get_metadata}
 \title{Get Localized Meta Information}
 \usage{
-get_metadata(ts_keys, locale = c("en", "de", "fr", "it"))
+get_metadata(ts_keys, locale = c("en", "de", "fr", "it"),
+  use_tempfile = FALSE)
 }
 \arguments{
 \item{ts_keys}{A vector of time series keys.}
@@ -12,6 +13,9 @@ get_metadata(ts_keys, locale = c("en", "de", "fr", "it"))
 \item{locale}{character ISO-2-digit language of requested metadata. Meta data
 are for survey related typically available in English, German, French and Italian. 
 Non survey data are not provided with meta information, yet.}
+
+\item{use_tempfile}{Store downloaded data to a temporary file and read from there.
+This option can be used to work around security measures preventing reading directly into RStudio's memory.}
 }
 \value{
 A named list of lists containing metadata.

@@ -4,10 +4,13 @@
 \alias{get_remaining_quota}
 \title{Check Remaining Quota}
 \usage{
-get_remaining_quota(api_key)
+get_remaining_quota(api_key, use_tempfile = FALSE)
 }
 \arguments{
 \item{api_key}{Your API key}
+
+\item{use_tempfile}{Store downloaded data to a temporary file and read from there.
+This option can be used to work around security measures preventing reading directly into RStudio's memory.}
 }
 \description{
 Query the API for the number of time series downloads remaining in the current month.

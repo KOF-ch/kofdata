@@ -5,6 +5,8 @@
 #' 
 #' @param username Your dataservice user name 
 #' @param api_key Your API key
+#' @param use_tempfile Store downloaded data to a temporary file and read from there.
+#' This option can be used to work around security measures preventing reading directly into RStudio's memory.
 #' @examples 
 #' available_files <- list_cached_files("kofdatapkg",
 #' "313984fcd9f343d3961891319b0ed321")

@@ -4,7 +4,11 @@
 \alias{list_public_keys}
 \title{List Keys for All Publicly Available Time Series}
 \usage{
-list_public_keys()
+list_public_keys(use_tempfile = FALSE)
+}
+\arguments{
+\item{use_tempfile}{Store downloaded data to a temporary file and read from there.
+This option can be used to work around security measures preventing reading directly into RStudio's memory.}
 }
 \value{
 An array of all public time series keys.

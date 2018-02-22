@@ -3,9 +3,13 @@
 #' Download time series data from the KOF web API. 
 #' To explore the available data and find the keys to series you are interested
 #' in, run \code{\link{start_key_explorer}}.
+#'
 #' @param ts_keys A vector of timeseries keys
 #' @param api_key Your API key. This is only needed if accessing non-public time series.
+#' @param use_tempfile Store downloaded data to a temporary file and read from there.
+#' This option can be used to work around security measures preventing reading directly into RStudio's memory.
 #' @param show_progress If set to true, shows a progress bar of the data being downloaded.
+#'
 #' @import httr
 #' @import jsonlite
 #' @examples 
