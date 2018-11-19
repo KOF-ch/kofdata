@@ -17,23 +17,16 @@ get_metadata <- function(ts_keys, locale=c("en", "de", "fr", "it")) {
   
   url <- "https://datenservice.kof.ethz.ch/api/v1/metadata"
   
-  query = list(locale = locale)
+  query_keys <- paste(ts_keys, collapse = ",")
   
-  meta_data <- lapply(ts_keys, function(key) {
-    
-    query$key = key
-    
-    response <- GET(url, query = query)
-    data <- fromJSON(content(response, as="text"))
-    data[data == "NA"] <- NA
-    
-    if(!is.null(data$info)) {
-      NA
-    } else {
-      data
-    }
-  })
+  query <-  list(locale = locale, keys = query_keys)
   
+  response <- GET(url, query = query)
+
+  data <- fromJSON(content(response, as="text"))
+
+  data[sapply(data, length) == 0] <- NA
+
   names(meta_data) <- ts_keys
   
   meta_data
