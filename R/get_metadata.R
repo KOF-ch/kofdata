@@ -30,9 +30,12 @@ get_metadata <- function(ts_keys, locale=c("en", "de", "fr", "it")) {
     if(!is.null(data$info)) {
       NA
     } else {
-      data
+      data[[key]]
     }
   })
+
+  # Set empty lists to NA
+  meta_data[sapply(meta_data, length) == 0] <- NA
 
   names(meta_data) <- ts_keys
 
