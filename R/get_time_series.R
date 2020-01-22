@@ -6,20 +6,31 @@
 #' @param ts_keys A vector of timeseries keys
 #' @param api_key Your API key. This is only needed if accessing non-public time series.
 #' @param show_progress If set to true, shows a progress bar of the data being downloaded.
+#' @param date_format Date format for the time series. If set to "Y-m-d" the date format include 
+#' year-month-day, otherwise only year and month.
 #' @import httr
 #' @import jsonlite
 #' @examples 
 #' get_time_series("kofbarometer")
 #' @export
 get_time_series <- function(ts_keys, api_key = NULL,
-                            show_progress = FALSE) {
+                            show_progress = FALSE,
+                            date_format = NULL) {
   
   # Build request URL
   keys <- paste(ts_keys, collapse=",")
   
   url <- "https://datenservice.kof.ethz.ch/api/v1/%s/ts"
   
-  query <- list(keys = keys)
+  if (is.null(date_format)) {
+    query <- list(keys = keys)
+  }
+  else {
+    query <- list(
+      keys = keys,
+      df = date_format
+    )
+  }
   
   if(!is.null(api_key)) {
     url <- sprintf(url, "main")
@@ -38,7 +49,7 @@ get_time_series <- function(ts_keys, api_key = NULL,
   status <- response$status_code
   
   if(status == 200) {
-     lapply(data, .json_to_ts)
+     lapply(data, .json_to_ts, date_format = date_format)
   } else if(status == 403) {
      stop("Could not authenticate. Please check your API key!")
   } else if(status == 412) {
