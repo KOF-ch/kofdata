@@ -1,44 +1,37 @@
 #' Get Time Series form KOF Datenservice API
 #'
-#' Download time series data from the KOF web API. 
+#' Download time series data from the KOF web API.
 #' To explore the available data and find the keys to series you are interested
 #' in, run \code{\link{start_key_explorer}}.
 #' @param ts_keys A vector of timeseries keys
 #' @param api_key Your API key. This is only needed if accessing non-public time series.
 #' @param show_progress If set to true, shows a progress bar of the data being downloaded.
-#' @param date_format Date format for the time series. If set to "Y-m-d" the date format include 
 #' year-month-day, otherwise only year and month.
 #' @import httr
 #' @import jsonlite
-#' @examples 
+#' @examples
 #' get_time_series("kofbarometer")
 #' @export
 get_time_series <- function(ts_keys, api_key = NULL,
-                            show_progress = FALSE,
-                            date_format = NULL) {
-  
+                            show_progress = FALSE) {
+
   # Build request URL
   keys <- paste(ts_keys, collapse=",")
-  
+
   url <- "https://datenservice.kof.ethz.ch/api/v1/%s/ts"
-  
-  if (is.null(date_format)) {
-    query <- list(keys = keys)
-  }
-  else {
-    query <- list(
-      keys = keys,
-      df = date_format
-    )
-  }
-  
+
+  query <- list(
+    keys = keys,
+    df = "Y-m-d"
+  )
+
   if(!is.null(api_key)) {
     url <- sprintf(url, "main")
     query$apikey <- api_key
   } else {
     url <- sprintf(url, "public")
   }
-  
+
   # Call the API
   if(show_progress) {
     response <- GET(url, progress(), query = query)
@@ -47,9 +40,9 @@ get_time_series <- function(ts_keys, api_key = NULL,
   }
   data <- fromJSON(content(response, as="text"))
   status <- response$status_code
-  
+
   if(status == 200) {
-     lapply(data, .json_to_ts, date_format = date_format)
+     lapply(data, .json_to_ts)
   } else if(status == 403) {
      stop("Could not authenticate. Please check your API key!")
   } else if(status == 412) {
