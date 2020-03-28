@@ -11,10 +11,11 @@ get_time_series(ts_keys, api_key = NULL, show_progress = FALSE)
 
 \item{api_key}{Your API key. This is only needed if accessing non-public time series.}
 
-\item{show_progress}{If set to true, shows a progress bar of the data being downloaded.}
+\item{show_progress}{If set to true, shows a progress bar of the data being downloaded.
+year-month-day, otherwise only year and month.}
 }
 \description{
-Download time series data from the KOF web API. 
+Download time series data from the KOF web API.
 To explore the available data and find the keys to series you are interested
 in, run \code{\link{start_key_explorer}}.
 }

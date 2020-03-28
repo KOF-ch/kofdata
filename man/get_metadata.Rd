@@ -10,7 +10,7 @@ get_metadata(ts_keys, locale = c("en", "de", "fr", "it"))
 \item{ts_keys}{A vector of time series keys.}
 
 \item{locale}{character ISO-2-digit language of requested metadata. Meta data
-are for survey related typically available in English, German, French and Italian. 
+are for survey related typically available in English, German, French and Italian.
 Non survey data are not provided with meta information, yet.}
 }
 \value{
@@ -20,5 +20,5 @@ A named list of lists containing metadata.
 Download metadata given a time series key.
 }
 \examples{
-get_metadata("ch.kof.inu.run1.ng08.fx.q_ql_ass_bs.balance","en")
+get_metadata("kofbarometer","en")
 }
