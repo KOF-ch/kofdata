@@ -4,7 +4,10 @@
 \alias{list_available_sets}
 \title{List Available Set Names and Their Description}
 \usage{
-list_available_sets()
+list_available_sets(api_key = NULL)
+}
+\arguments{
+\item{api_key}{Your API key. This is only needed if accessing non-public sets}
 }
 \value{
 A data frame with the names, descriptions and public availability of datasets. These sets can be downloaded via get_dataset.
