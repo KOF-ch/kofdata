@@ -11,7 +11,7 @@
 #' list_keys_in_set("ds_kmi_mixed_freq")
 #' @export
 list_keys_in_set <- function(setname, api_key = NULL) {
-  url <- "https://datenservice.kof.ethz.ch/api/v1/%s/sets/details/%s"
+  url <- "https://datenservice.kof.ethz.ch/api/v1/%s/collections/details/%s"
 
   keylists <- lapply(setname, function(set){
     response <- GET(sprintf(url, ifelse(is.null(api_key), "public", "main"), set))
