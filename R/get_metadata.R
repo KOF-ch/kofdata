@@ -15,29 +15,21 @@ get_metadata <- function(ts_keys, locale=c("en", "de", "fr", "it")) {
 
   locale <- match.arg(locale)
 
-  url <- "https://datenservice.kof.ethz.ch/api/v1/metadata"
+  url <- "https://datenservice.kof.ethz.ch/api/v1/public/metadata"
 
-  query = list(locale = locale)
+  query = list(
+    locale = locale,
+    keys = paste(ts_keys, collapse = ",")
+  )
 
-  meta_data <- lapply(ts_keys, function(key) {
-
-    query$key = key
-
-    response <- GET(url, query = query)
-    data <- fromJSON(content(response, as="text"))
-    data[data == "NA"] <- NA
-
-    if(!is.null(data$info)) {
-      NA
-    } else {
-      data[[key]]
-    }
-  })
+  response <- GET(url, query = query)
+  data <- fromJSON(content(response, as="text"))
 
   # Set empty lists to NA
-  meta_data[sapply(meta_data, length) == 0] <- NA
+  data[sapply(data, length) == 0] <- NA
 
-  names(meta_data) <- ts_keys
+  # Set metadata for missing keys to NA
+  data[setdiff(ts_keys, names(data))] <- NA
 
-  meta_data
+  data
 }

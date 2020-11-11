@@ -4,10 +4,12 @@
 \alias{list_keys_in_set}
 \title{List All Keys in a Set}
 \usage{
-list_keys_in_set(setname)
+list_keys_in_set(setname, api_key = NULL)
 }
 \arguments{
 \item{setname}{The name of the set}
+
+\item{api_key}{Your API key. This is only needed if accessing non-public sets}
 }
 \value{
 If a single set name is provided, a vector of time series keys.
