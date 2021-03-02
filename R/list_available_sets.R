@@ -18,9 +18,11 @@ list_available_sets <- function(api_key = NULL) {
 
   if(response$status_code == 200) {
     ret <- fromJSON(content(response, as = "text"))
+    descriptions <- sapply(ret, '[[', "description")
+    descriptions[sapply(descriptions, is.null)] <- NA
     data.frame(
       set_name = names(ret),
-      set_description = sapply(ret, '[[', "description"),
+      set_description = unlist(descriptions),
       is_public = sapply(ret, '[[', "is_public"),
       stringsAsFactors = FALSE
     )
