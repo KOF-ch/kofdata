@@ -12,7 +12,7 @@
     if(grepl("Invalid authentication credentials", files$message)) {
       stop("Invalid API key!")
     } else if(grepl("no API found", files$message)) {
-      stop("Username not found!")
+      stop("Username not found! This service is only available to customers who ordered individual exports. If you ordered such a service, please make sure the username is spelled correctly.")
     }
   }
   
