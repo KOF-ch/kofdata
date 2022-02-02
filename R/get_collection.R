@@ -1,8 +1,8 @@
 #' Download Pre-Defined collection
 #'
 #' Download a predefined collection of time series.
+#' @inheritParams param_defs
 #' @param collection_name The name of the collection you wish to download. For a list of available collections, go to ["list_available_collections"]
-#' @param api_key Your API key. This is only needed if accessing non-public time series. Defaults to NULL (public data).
 #' @param show_progress If collection to true, shows a progress bar of the data being downloaded.
 #' @examples
 #' get_collection("ds_kmi_mixed_freq",show_progress = TRUE)

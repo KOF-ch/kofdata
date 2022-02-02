@@ -1,8 +1,8 @@
 #' get_dataset 
 #' 
 #' Download a predefined set of time series. 
+#' @inheritParams param_defs
 #' @param username Your dataservice user name 
-#' @param api_key Your API key
 #' @param file_to_download The name of the file to retrieve.
 #' @param target Path to the location, at which to store the file. If NULL, the file will be
 #' saved to the working directory.

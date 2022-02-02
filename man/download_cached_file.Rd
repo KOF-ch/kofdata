@@ -9,7 +9,8 @@ download_cached_file(username, api_key, file_to_download, target = NULL)
 \arguments{
 \item{username}{Your dataservice user name}
 
-\item{api_key}{Your API key}
+\item{api_key}{\strong{character} Your API key. An API key is needed if accessing non-public timeseries. 
+If downloading public timeseries parameter can be omitted.}
 
 \item{file_to_download}{The name of the file to retrieve.}
 

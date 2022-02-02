@@ -7,7 +7,8 @@
 get_remaining_quota(api_key)
 }
 \arguments{
-\item{api_key}{Your API key}
+\item{api_key}{\strong{character} Your API key. An API key is needed if accessing non-public timeseries. 
+If downloading public timeseries parameter can be omitted.}
 }
 \description{
 Query the API for the number of time series downloads remaining in the current month.

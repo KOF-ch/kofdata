@@ -9,7 +9,8 @@ get_time_series(ts_keys, api_key = NULL, show_progress = FALSE)
 \arguments{
 \item{ts_keys}{A vector of timeseries keys}
 
-\item{api_key}{Your API key. This is only needed if accessing non-public time series.}
+\item{api_key}{\strong{character} Your API key. An API key is needed if accessing non-public timeseries. 
+If downloading public timeseries parameter can be omitted.}
 
 \item{show_progress}{If set to true, shows a progress bar of the data being downloaded.
 year-month-day, otherwise only year and month.}

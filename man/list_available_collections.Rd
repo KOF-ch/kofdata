@@ -7,7 +7,8 @@
 list_available_collections(api_key = NULL)
 }
 \arguments{
-\item{api_key}{Your API key. This is only needed if accessing non-public collections}
+\item{api_key}{\strong{character} Your API key. An API key is needed if accessing non-public timeseries. 
+If downloading public timeseries parameter can be omitted.}
 }
 \value{
 A data frame with the names, descriptions and public availability of collections. These collections can be downloaded via get_collection.

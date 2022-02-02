@@ -3,8 +3,8 @@
 #' Download time series data from the KOF web API.
 #' To explore the available data and find the keys to series you are interested
 #' in, run \code{\link{start_key_explorer}}.
+#' @inheritParams param_defs
 #' @param ts_keys A vector of timeseries keys
-#' @param api_key Your API key. This is only needed if accessing non-public time series.
 #' @param show_progress If set to true, shows a progress bar of the data being downloaded.
 #' year-month-day, otherwise only year and month.
 #' @import httr

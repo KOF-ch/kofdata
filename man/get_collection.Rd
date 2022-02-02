@@ -9,7 +9,8 @@ get_collection(collection_name, api_key = NULL, show_progress = FALSE)
 \arguments{
 \item{collection_name}{The name of the collection you wish to download. For a list of available collections, go to ["list_available_collections"]}
 
-\item{api_key}{Your API key. This is only needed if accessing non-public time series. Defaults to NULL (public data).}
+\item{api_key}{\strong{character} Your API key. An API key is needed if accessing non-public timeseries. 
+If downloading public timeseries parameter can be omitted.}
 
 \item{show_progress}{If collection to true, shows a progress bar of the data being downloaded.}
 }

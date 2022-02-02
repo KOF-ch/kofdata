@@ -2,7 +2,7 @@
 #'
 #' This function is deprecated. Use \code{\link{list_available_collections}} instead.
 #' Sets are pre-defined lists of time series. Sets are the convenient alternative to concatenating many series in an URL.
-#' @param api_key Your API key. This is only needed if accessing non-public sets
+#' @inheritParams param_defs
 #' @return A data frame with the names, descriptions and public availability of datasets. These sets can be downloaded via get_dataset.
 #' @import httr
 #' @import jsonlite

@@ -9,7 +9,8 @@ list_keys_in_collection(collectionname, api_key = NULL)
 \arguments{
 \item{collectionname}{The name of the collection}
 
-\item{api_key}{Your API key. This is only needed if accessing non-public collections}
+\item{api_key}{\strong{character} Your API key. An API key is needed if accessing non-public timeseries. 
+If downloading public timeseries parameter can be omitted.}
 }
 \value{
 If a single collection name is provided, a vector of time series keys.

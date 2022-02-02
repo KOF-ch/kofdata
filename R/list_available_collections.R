@@ -1,7 +1,7 @@
 #' List Available collection Names and Their Description
 #'
 #' collections are pre-defined lists of time series. collections are the convenient alternative to concatenating many series in an URL.
-#' @param api_key Your API key. This is only needed if accessing non-public collections
+#' @inheritParams param_defs
 #' @return A data frame with the names, descriptions and public availability of collections. These collections can be downloaded via get_collection.
 #' @import httr
 #' @import jsonlite

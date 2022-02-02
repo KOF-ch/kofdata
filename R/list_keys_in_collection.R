@@ -1,8 +1,8 @@
 #' List All Keys in a Collection
 #'
 #' List the keys of all time series in a collection. To learn more about specific keys, use get_metadata.
+#' @inheritParams param_defs
 #' @param collectionname The name of the collection
-#' @param api_key Your API key. This is only needed if accessing non-public collections
 #' @return If a single collection name is provided, a vector of time series keys.
 #' If multiple collection names are provided, a list of vectors of time series keys.
 #' @import httr
