@@ -30,3 +30,16 @@ test_that("download_cached_file works", {
 
   expect_equal("hacketyhack", "hacketyhack")
 })
+
+test_that("download_cached_file errors on wrong username", {
+  expect_error(download_cached_file("notauser", apikey, "file.txt"), "Username not found")
+})
+
+test_that("download_cached_file errors on wrong api key", {
+  expect_error(download_cached_file("testuser", "gimme", "file.txt"), "Invalid API key")
+})
+
+test_that("download_cached_file cleans up on error", {
+  capture_error(download_cached_file("testuser", "bleb", "file.txt"))
+  expect_false(file.exists("file.txt"))
+})
