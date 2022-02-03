@@ -24,5 +24,5 @@ test_that("get_collection errors with invalid set", {
 })
 
 test_that("get_collection errors with invalid api key", {
-  expect_error(get_collection("set_doesnt_matter", "GandalfTheGray"), "Could not authenticate.")
+  expect_error(get_collection("set_doesnt_matter", "GandalfTheGray"), "Invalid API key")
 })

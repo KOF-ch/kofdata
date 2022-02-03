@@ -12,5 +12,5 @@ test_that("get_remaining_quota works", {
 })
 
 test_that("get_remaining_quota errors with invalid api key", {
-  expect_error(get_remaining_quota("some_nonexistent_key"), "The API returned a status code of")
+  expect_error(get_remaining_quota("some_nonexistent_key"), "Invalid API key")
 })

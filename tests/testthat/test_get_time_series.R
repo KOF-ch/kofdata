@@ -25,5 +25,5 @@ test_that("get_time_series errors on invalid key", {
 })
 
 test_that("get_time_series errors on invalid api key", {
-  expect_error(get_time_series("key_doesnt_matter", "GandalfTheGray", show_progress = F), "Could not authenticate.")
+  expect_error(get_time_series("key_doesnt_matter", "GandalfTheGray", show_progress = F), "Invalid API key")
 })
