@@ -16,3 +16,12 @@ test_that("list_keys_in_collection works", {
     expect_equal(names(keylists), sets[1:2, "collection_name"])
   }
 })
+
+test_that("list_keys_in_collection works for private collection", {
+  apikey <- Sys.getenv("KOFDATA_TEST_SECRET")
+  skip_if(nchar(apikey) == 0)
+
+  keys <- list_keys_in_collection("kofdata_test_collection", apikey)
+
+  expect_equal(keys, c("ch.kof.barometer", "ch.kof.globalbaro.leading"))
+})
