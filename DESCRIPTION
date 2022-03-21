@@ -18,6 +18,6 @@ BugReports: https://github.com/KOF-ch/kofdata/issues
 Date: 2021-03-15
 License: GPL-2
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Suggests: testthat
 Encoding: UTF-8
