@@ -108,34 +108,6 @@ get_metadata("ch.kof.inu.ng08.fx.q_ql_ass_bs.balance","it")
 
 ```
 
-### Collections of Time Series
-
-
-### Some Swissness
-
-
-On an endnote: {kofdata} is made in Switzerland and can return official two character abbreviations for all 26 cantons (states). 
-
-```r
-kofdata::cantons()
-# [1] "AG" "AR" "AI" "BL" "BS" "BE" "FR" "GE" "GL" # "GR" "JU" "LU" "NE"
-# [14] "NW" "OW" "SH" "SZ" "SO" "SG" "TG" "TI" # "UR" "VS" "VD" "ZG" "ZH"
-
-```
-
-
-## Out-of-service - Exciting new stuff ahead!
-
-
-### Do not uset these anymore
-
-The following functions are out of service
-
-- list_available_sets (experimental)
-- get_legacy_key (deprecated)
-- start_key_explorer (replace by the time series explorer)
-- translate_legacy_keys (deprecated)
-
 
 ### A Glimpse at the Future of {kofdata}
 
