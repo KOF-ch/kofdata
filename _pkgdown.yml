@@ -1,0 +1,12 @@
+url: ~
+navbar:
+  structure:
+    right: [twitter, github]
+  components:
+    twitter:
+      icon: fa-twitter
+      href: http://twitter.com/kofdata
+      aria-label: Twitter
+template:
+  bootstrap: 5
+  

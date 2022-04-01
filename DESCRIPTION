@@ -19,5 +19,7 @@ Date: 2021-03-15
 License: GPL-2
 LazyData: true
 RoxygenNote: 7.1.2
-Suggests: testthat
+Suggests: 
+    rmarkdown,
+    testthat
 Encoding: UTF-8

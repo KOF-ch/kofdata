@@ -63,57 +63,14 @@ str(labor)
 
 ```
 
-### Data Descriptions
-
-
-The KOF API makes more than **500'000 time series about Swiss economy** available. 
-Hence thorough **data descriptions** are very important. For the lion's share of the data, i.e., those time series stemming from the **business tendency surveys, meta descriptions** are available in **English, German, French and Italian**. You can use iso 2-digit country codes to display a series description in the desired language. 
-
-
-```r
-get_metadata("ch.kof.inu.ng08.fx.q_ql_ass_bs.balance","it")
-
-
-# $ch.kof.inu.ng08.fx.q_ql_ass_bs.balance
-# $ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$sa
-# [1] "originale"
-
-# $ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$item
-# [1] "saldo (quota in %)"
-
-# $ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$noga
-# [1] "noga 2008"
-
-# $ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$region
-# [1] "Svizzera totale"
-
-# $ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$sector
-# [1] "settore totale (lettera nomenclatura generale delle attività economiche C # (ATTIVITÀ MANIFATTURIERE))"
-
-# $ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$source
-# [1] "KOF Centro di ricerche congiunturali"
-
-# $ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$dataset
-# [1] "inchiesta Industria"
-
-# $ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$variable
-# [1] "situazione degli affari, sentenza"
-
-# $ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$variable_type
-# [1] "domanda qualitativa con scala a 3 punti"
-
-# $ch.kof.inu.ng08.fx.q_ql_ass_bs.balance$variable_period
-# [1] "periodo totale"
-
-
-```
-
-
 ### A Glimpse at the Future of {kofdata}
 
 We are currently testing a web application to help people find the time series they are looking for. It is a graphical web tool that runs in your web browser and helps you to search and find time series in our pool 
 
 
+### KOF High Frequency Dashboard
 
+kofdata.netlify.app
+github.com/KOF-ch/kofdata
 
 
