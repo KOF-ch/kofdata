@@ -12,6 +12,3 @@ An array of all public time series keys.
 \description{
 This function will be removed from future versions of kofdata.
 }
-\examples{
-list_public_keys()
-}

@@ -16,8 +16,6 @@ year-month-day, otherwise only year and month.}
 }
 \description{
 Download time series data from the KOF web API.
-To explore the available data and find the keys to series you are interested
-in, run \code{\link{start_key_explorer}}.
 }
 \examples{
 get_time_series("kofbarometer")

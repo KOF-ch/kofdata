@@ -16,6 +16,3 @@ A named list of legacy keys
 Get legacy keys given new time series keys. Note that not all records need to have 
 a legacy key because there are more new keys than old keys.
 }
-\examples{
-get_legacy_key("ch.kof.inu.run1.ng08.fx.q_ql_ass_bs.balance")
-}
