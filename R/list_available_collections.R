@@ -6,7 +6,7 @@
 #' @import httr
 #' @import jsonlite
 #' @examples
-#' list_available_sets()
+#' list_available_collections()
 #' @export
 list_available_collections <- function(api_key = NULL) {
   # Build request URL

@@ -16,5 +16,5 @@ A data frame with the names, descriptions and public availability of datasets. T
 Sets are pre-defined lists of time series. Sets are the convenient alternative to concatenating many series in an URL.
 }
 \examples{
-list_available_sets()
+list_available_collections()
 }

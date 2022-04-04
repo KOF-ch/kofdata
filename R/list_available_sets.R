@@ -5,8 +5,6 @@
 #' @return A data frame with the names, descriptions and public availability of datasets. These sets can be downloaded via get_dataset.
 #' @import httr
 #' @import jsonlite
-#' @examples
-#' list_available_sets()
 #' @export
 list_available_sets <- function(api_key = NULL) {
 .Deprecated("list_available_collections")
