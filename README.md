@@ -1,5 +1,11 @@
 # kofdata - Get Data from the KOF Datenservice API
 
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/kofdata)](https://cran.r-project.org/package=kofdata)
+[![CRAN_time_from_release](https://www.r-pkg.org/badges/ago/kofdata)](https://cran.r-project.org/package=kofdata)
+[![metacran downloads](https://cranlogs.r-pkg.org/badges/kofdata)](https://cran.r-project.org/package=kofdata)
+[![license](https://img.shields.io/badge/license-gplv3-lightgrey.svg)](https://choosealicense.com/)
+
+
 Read Swiss time series data from the KOF Datenservice API. The API provides macroeconomic survey data, business cycle and further macro economic time series about Switzerland. The package itself is a set of wrappers around API. The kofdata package is able to consume public information as well as data that needs an API token.
 
 For further information on the data, the API and the KOF Swiss Economic Institute please consult the corresponding links. 

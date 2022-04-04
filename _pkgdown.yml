@@ -1,4 +1,20 @@
 url: ~
+template:
+  bootstrap: 5
+home: 
+  links:
+  - text: KOF Business Tendency Surveys
+    href: https://kof.ethz.ch/en/surveys/business-tendency-surveys.html
+  - text: KOF Indicators
+    href: https://kof.ethz.ch/en/forecasts-and-indicators/indicators.html
+  - text: KOF Economic Forecasts
+    href: https://kof.ethz.ch/en/forecasts-and-indicators/forecasts/kof-economic-forecast.html
+  - text: KOF Time Series Database (KOF Website)
+    href: https://kof.ethz.ch/en/data/kof-time-series-database.html
+  - text: KOF High Frequency Dashboard (HFD)
+    href: https://kofdata.netlify.app
+    sidebar:
+      structure: [links]
 navbar:
   structure:
     right: [twitter, github]
@@ -7,6 +23,7 @@ navbar:
       icon: fa-twitter
       href: http://twitter.com/kofdata
       aria-label: Twitter
-template:
-  bootstrap: 5
+    
+  
+    
   
