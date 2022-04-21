@@ -1,5 +1,6 @@
 ---
 title: "Composed Data Collections"
+subtitle: "Playlists for Your Data"
 ---
 
 ```{r, include = FALSE}
@@ -12,3 +13,20 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(kofdata)
 ```
+
+Data collections are a set of KOF time series identifiers (key) that allow you 
+consume a previously defined selection of time series -- very much comparable to 
+a playlist on your favorite music streaming service. The collections does not contain 
+the actual data, but their identifiers. Collections make it easy to consume the same
+series on a regular basis like, e.g., in a economic monitoring setup. 
+
+Note that at the time of writing this the API does not allow users to 
+define custom collections. Still, collections are useful to group time series 
+and refer to one single collection name to consume a (large) number of time series as opposed 
+to make single collections and listing all keys every time we consume the data. 
+
+
+```{r}
+
+```
+
