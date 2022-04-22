@@ -27,6 +27,17 @@ to make single collections and listing all keys every time we consume the data.
 
 
 ```{r}
-
+kof_collections <- list_available_collections()
+head(kof_collections)
 ```
+Listing available collections is straight forward just like consuming time series within a collection. 
+The `get_collection` command returns a list of time series in this case the [Open Government Data (OGD) composition of the Economic Sentiment Indicator](https://opendata.swiss/de/dataset/kof-economic-sentiment-indicator) which consists of two time series, the current ESI and a 2018 version of the indicator: 
+
+```{r}
+esi <- get_collection("ogd_ch.kof.esi")
+# tstools is good a conveniently plotting list of time series.. 
+tstools::tsplot(esi)
+```
+
+
 

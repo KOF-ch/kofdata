@@ -69,14 +69,12 @@ str(labor)
 
 ```
 
-### A Glimpse at the Future of {kofdata}
-
-We are currently testing a web application to help people find the time series they are looking for. It is a graphical web tool that runs in your web browser and helps you to search and find time series in our pool 
-
-
 ### KOF High Frequency Dashboard
 
-kofdata.netlify.app
-github.com/KOF-ch/kofdata
+In April 2020, KOF composed a list of alternative indicators for Switzerland that 
+are available at a higher frequency than common economic indicators. These 
+indicators were derived from publicly available data. Many of these indicators are updated until today and can be 
+consumed throught the KOF Data REST API and the {kofdata} R package. To learn visit  [kofdata.netlify.app](https://kofdata.netlify.app)
+
 
 

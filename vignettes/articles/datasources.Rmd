@@ -12,3 +12,39 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(kofdata)
 ```
+
+## Public Collections
+
+
+The KOF Data API exposes time series data and allows KOF partners and the broader 
+public to consume data manually and in automated fashion. The following collections
+of time series data are publicly available: 
+
+- KOF Tourism Forecast Summer Season 
+- KOF Tourism Forecast Winter Season
+- KOF Tourism Forecast Year
+- KOF Consensus Forecast
+- KOF Globalization index 2018 vintage
+- KOF Globalization index 2019 vintage
+- KOF Main Indicators (KMI)
+- KOF-Baublatt-Ausblick fitted values
+- KOF-Baublatt-Ausblick Realtime
+- KOF innovation survey (PAN) set for SBFI
+- KOF Consensus Forecast Dates
+- KOF Consensus Forecast Maximum
+- KOF Consensus Forecast Mean
+- KOF Consensus Forecast Minimum
+- KOF Consensus Forecast Median
+- KOF Consensus Forecast Probabilities
+- KOF Consensus Forecast Standard Deviation
+- [KOF Open Government Data Datasets](https://opendata.swiss/de/dataset?q=KOF)
+
+Run `list_available_collections()` to find the name of a collection which you can use the reference to a particular collection. 
+
+
+## KOF High Frequency Dashboard
+
+In April 2020, KOF composed a list of alternative indicators for Switzerland that 
+are available at a higher frequency than common economic indicators. These 
+indicators were derived from publicly available data. Many of these indicators are updated until today and can be 
+consumed throught the KOF Data REST API and the {kofdata} R package. To learn visit  [kofdata.netlify.app](https://kofdata.netlify.app)

@@ -7,8 +7,6 @@
 #' If multiple set names are provided, a list of vectors of time series keys.
 #' @import httr
 #' @import jsonlite
-#' @examples
-#' list_keys_in_set("ds_kmi_mixed_freq")
 #' @export
 list_keys_in_set <- function(setname, api_key = NULL) {
   .Deprecated("list_keys_in_collection")
