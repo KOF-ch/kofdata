@@ -31,6 +31,9 @@
     <loc>/reference/download_cached_file.html</loc>
   </url>
   <url>
+    <loc>/reference/get_collection.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_dataset.html</loc>
   </url>
   <url>
@@ -58,10 +61,16 @@
     <loc>/reference/list_cached_files.html</loc>
   </url>
   <url>
+    <loc>/reference/list_keys_in_collection.html</loc>
+  </url>
+  <url>
     <loc>/reference/list_keys_in_set.html</loc>
   </url>
   <url>
     <loc>/reference/list_public_keys.html</loc>
+  </url>
+  <url>
+    <loc>/reference/param_defs.html</loc>
   </url>
   <url>
     <loc>/reference/translate_legacy_keys.html</loc>

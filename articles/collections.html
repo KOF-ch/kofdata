@@ -80,6 +80,8 @@
 <div class="row">
   <main id="main"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Composed Data Collections</h1>
+            <h3 data-toc-skip class="subtitle">Playlists for Your
+Data</h3>
             
       
       <small class="dont-index">Source: <a href="https://github.com/KOF-ch/kofdata/blob/HEAD/vignettes/articles/collections.Rmd" class="external-link"><code>vignettes/articles/collections.Rmd</code></a></small>
@@ -92,6 +94,45 @@
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/KOF-ch/kofdata" class="external-link">kofdata</a></span><span class="op">)</span>
 <span class="co">#&gt; Loading required package: jsonlite</span>
 <span class="co">#&gt; Loading required package: httr</span></code></pre></div>
+<p>Data collections are a set of KOF time series identifiers (key) that
+allow you consume a previously defined selection of time series – very
+much comparable to a playlist on your favorite music streaming service.
+The collections does not contain the actual data, but their identifiers.
+Collections make it easy to consume the same series on a regular basis
+like, e.g., in a economic monitoring setup.</p>
+<p>Note that at the time of writing this the API does not allow users to
+define custom collections. Still, collections are useful to group time
+series and refer to one single collection name to consume a (large)
+number of time series as opposed to make single collections and listing
+all keys every time we consume the data.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">kof_collections</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/list_available_collections.html">list_available_collections</a></span><span class="op">(</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">kof_collections</span><span class="op">)</span>
+<span class="co">#&gt;                                 collection_name</span>
+<span class="co">#&gt; baro_vintages_monthly     baro_vintages_monthly</span>
+<span class="co">#&gt; bs_indicator                       bs_indicator</span>
+<span class="co">#&gt; ch.kof.trsm.fcst.summer ch.kof.trsm.fcst.summer</span>
+<span class="co">#&gt; ch.kof.trsm.fcst.winter ch.kof.trsm.fcst.winter</span>
+<span class="co">#&gt; ch.kof.trsm.fcst.year     ch.kof.trsm.fcst.year</span>
+<span class="co">#&gt; ds_consensus_qtr               ds_consensus_qtr</span>
+<span class="co">#&gt;                                              collection_description is_public</span>
+<span class="co">#&gt; baro_vintages_monthly                        KOF Barometer vintages      TRUE</span>
+<span class="co">#&gt; bs_indicator            KOF Geschäftslage Indikator und Subbranchen      TRUE</span>
+<span class="co">#&gt; ch.kof.trsm.fcst.summer          KOF Tourism Forecast Summer Season      TRUE</span>
+<span class="co">#&gt; ch.kof.trsm.fcst.winter          KOF Tourism Forecast Winter Season      TRUE</span>
+<span class="co">#&gt; ch.kof.trsm.fcst.year                     KOF Tourism Forecast Year      TRUE</span>
+<span class="co">#&gt; ds_consensus_qtr                             KOF Consensus Forecast      TRUE</span></code></pre></div>
+<p>Listing available collections is straight forward just like consuming
+time series within a collection. The <code>get_collection</code> command
+returns a list of time series in this case the <a href="https://opendata.swiss/de/dataset/kof-economic-sentiment-indicator" class="external-link">Open
+Government Data (OGD) composition of the Economic Sentiment
+Indicator</a> which consists of two time series, the current ESI and a
+2018 version of the indicator:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">esi</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_collection.html">get_collection</a></span><span class="op">(</span><span class="st">"ogd_ch.kof.esi"</span><span class="op">)</span>
+<span class="co"># tstools is good a conveniently plotting list of time series.. </span>
+<span class="fu">tstools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tstools/man/tsplot.html" class="external-link">tsplot</a></span><span class="op">(</span><span class="va">esi</span><span class="op">)</span></code></pre></div>
+<p><img src="collections_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
   </main>
 </div>
 
