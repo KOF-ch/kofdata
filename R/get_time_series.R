@@ -9,7 +9,7 @@
 #' @import httr
 #' @import jsonlite
 #' @examples
-#' get_time_series("kofbarometer")
+#' try(get_time_series("kofbarometer"))
 #' @export
 get_time_series <- function(ts_keys, api_key = NULL,
                             show_progress = FALSE) {

@@ -9,7 +9,7 @@
 #' @import httr
 #' @import jsonlite
 #' @examples
-#' get_metadata("kofbarometer","en")
+#' try(get_metadata("kofbarometer","en"))
 #' @export
 get_metadata <- function(ts_keys, locale=c("en", "de", "fr", "it")) {
 

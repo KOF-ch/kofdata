@@ -8,7 +8,7 @@
 #' @import httr
 #' @import jsonlite
 #' @examples
-#' list_keys_in_collection("ds_kmi_mixed_freq")
+#' try(list_keys_in_collection("ds_kmi_mixed_freq"))
 #' @export
 list_keys_in_collection <- function(collectionname, api_key = NULL) {
   url <- "https://datenservice.kof.ethz.ch/api/v1/%s/collections/details/%s"

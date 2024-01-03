@@ -5,7 +5,7 @@
 #' @param collection_name The name of the collection you wish to download. For a list of available collections, go to ["list_available_collections"]
 #' @param show_progress If collection to true, shows a progress bar of the data being downloaded.
 #' @examples
-#' get_collection("ds_kmi_mixed_freq",show_progress = TRUE)
+#' try(get_collection("ds_kmi_mixed_freq",show_progress = TRUE))
 #' @import httr
 #' @import jsonlite
 #' @export

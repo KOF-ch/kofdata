@@ -6,7 +6,7 @@
 #' @import httr
 #' @import jsonlite
 #' @examples
-#' list_available_collections()
+#' try(list_available_collections())
 #' @export
 #' @aliases list_available_collections
 list_available_collections <- function(api_key = NULL) {

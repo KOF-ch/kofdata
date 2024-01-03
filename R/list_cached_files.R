@@ -6,8 +6,8 @@
 #' @inheritParams param_defs
 #' @param username Your dataservice user name 
 #' @examples 
-#' available_files <- list_cached_files("kofdatapkg",
-#' "313984fcd9f343d3961891319b0ed321")
+#' available_files <- try(list_cached_files("kofdatapkg",
+#' "313984fcd9f343d3961891319b0ed321"))
 #' available_files
 #' @import httr
 #' @export 

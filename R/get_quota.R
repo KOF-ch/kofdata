@@ -3,7 +3,7 @@
 #' Query the API for the number of time series downloads remaining in the current month.
 #' @inheritParams param_defs
 #' @examples
-#' get_remaining_quota("313984fcd9f343d3961891319b0ed321")
+#' try(get_remaining_quota("313984fcd9f343d3961891319b0ed321"))
 #' @import httr
 #' @export
 get_remaining_quota <- function(api_key) {
