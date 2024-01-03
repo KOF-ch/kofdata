@@ -1,6 +1,6 @@
 Package: kofdata
 Type: Package
-Version: 0.2
+Version: 0.2.1
 Title: Get Data from the 'KOF Datenservice' API
 Description: Read Swiss time series data from the 'KOF Data' API, <https://datenservice.kof.ethz.ch>. The API provides macro economic time series data mostly about Switzerland. The package itself is a set of wrappers around the 'KOF Datenservice' API. The 'kofdata' package is able to consume public information as well as data that requires an API token. 
 Authors@R: c(
