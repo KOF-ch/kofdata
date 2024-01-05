@@ -6,6 +6,7 @@ Description: Read Swiss time series data from the 'KOF Data' API, <https://daten
 Authors@R: c(
     person("Matthias", "Bannert", , "bannert@kof.ethz.ch", c("aut", "cre")),
     person("Severin", "Thoeni", , "thoenis@kof.ethz.ch", "aut"),
+    person("Oliver", "Müller", , "omueller@kof.ethz.ch", "aut"),
     person("Diana", "Diaz", , "diaz@kof.ethz.ch", "ctb"))
 Depends:
     R (>= 3.0.0),
@@ -20,7 +21,7 @@ Suggests:
     testthat
 URL: https://github.com/KOF-ch/kofdata
 BugReports: https://github.com/KOF-ch/kofdata/issues
-Date: 2022-04-29
+Date: 2024-01-05
 License: GPL-2
 LazyData: true
 RoxygenNote: 7.1.2
