@@ -68,13 +68,3 @@ str(labor)
   
 
 ```
-
-### KOF High Frequency Dashboard
-
-In April 2020, KOF composed a list of alternative indicators for Switzerland that 
-are available at a higher frequency than common economic indicators. These 
-indicators were derived from publicly available data. Many of these indicators are updated until today and can be 
-consumed throught the KOF Data REST API and the {kofdata} R package. To learn visit  [kofdata.netlify.app](https://kofdata.netlify.app)
-
-
-
