@@ -1,3 +1,7 @@
+DEPRECATED
+==========
+Please use the [tsdbapi R package](https://github.com/KOF-ch/tsdbapi-R) to download time series data from KOF instead.
+
 # kofdata - Get Data from the KOF Datenservice API
 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/kofdata)](https://cran.r-project.org/package=kofdata)
