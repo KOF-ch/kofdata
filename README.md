@@ -1,4 +1,4 @@
-DEPRECATED
+DISCONTINUED
 ==========
 Please use the [tsdbapi R package](https://github.com/KOF-ch/tsdbapi-R) to download time series data from KOF instead.
 
